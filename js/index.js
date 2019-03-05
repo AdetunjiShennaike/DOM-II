@@ -65,7 +65,9 @@ boat.addEventListener('dragend',function(){
 const navBar = document.querySelector('.main-navigation')
 window.addEventListener('load', function(){
   TweenMax.to('.img', 4, {rotation:720});
-  navBar.setAttribute('z-index: 1000');
+  // navBar.setAttribute('z-index: 1000');
+  //set attribute doesn't work, style with camel case is better
+  navBar.style.zIndex = 100;
 })
 
 //copy and cut notifier
