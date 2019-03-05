@@ -47,13 +47,23 @@ container.addEventListener('wheel',function(){
   logo.style.color = hexColorCode;
 });
 
-//drag and drop an item making it grow while you hesitate 
+//drag and dragend an item making the page change while you hold making it look like the navbar changes the appearance of the site.
 const boat = document.querySelector('.content-destination img');
+const text = document.querySelector('.home');
 
-boat.addEventListener('drag', function(event){
-  event.style.display = 'none';
+boat.addEventListener('drag', function(){
+  TweenMax.to('.main-navigation', .3, {y:800});
+  text.style.color = 'blue';
 })
 
-// boat.addEventListener('drop',function(event){
-//   event.setAttribute = 'border: 0px dashed orange';
-// })
+boat.addEventListener('dragend',function(){
+  TweenMax.to('.main-navigation', .1, {y:0});
+  text.style.color = 'black';
+})
+
+//load creates an animation with GSAP
+const navBar = document.querySelector('.main-navigation')
+window.addEventListener('load', function(){
+  TweenMax.to('.img', 4, {rotation:720});
+  navBar.setAttribute('z-index: 10');
+})
