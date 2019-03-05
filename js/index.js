@@ -65,5 +65,19 @@ boat.addEventListener('dragend',function(){
 const navBar = document.querySelector('.main-navigation')
 window.addEventListener('load', function(){
   TweenMax.to('.img', 4, {rotation:720});
-  navBar.setAttribute('z-index: 10');
+  navBar.setAttribute('z-index: 1000');
+})
+
+//copy and cut notifier
+text.addEventListener('copy', function(){
+  window.alert("Stop stealing from me!!");
+})
+
+text.addEventListener('cut', function(){
+  window.alert("Stop stealing from me!!");
+})
+
+//select raises suspicion 
+text.addEventListener('dblclick', function(){
+  console.log('Hey! Boss I think we need to watch this guy, he looks suspicious.');
 })
