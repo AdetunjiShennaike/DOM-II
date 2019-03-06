@@ -7,6 +7,9 @@ blocks.forEach(function(block,i){
   block.addEventListener('click',function(e){
     // e.target.style.order = 0;
     //doesn't work after initial click
+    blocks.forEach(function(item){
+      item.style.order = 0;
+    });
     e.target.style.order -= 1;
   });
 })
